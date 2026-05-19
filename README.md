@@ -26,6 +26,7 @@ docker-compose up --build
 ```
 
 Acesse em: **http://localhost:3000**
+
 API disponível em: **http://localhost:5000/api**
 
 ---
