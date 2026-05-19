@@ -1,8 +1,14 @@
 # PlanejAula — Sistema de Gerenciamento de Planos de Aula
 
-Sistema web completo para cadastro, organização e consulta de planos de aula, com **Smart Assist** por IA (Anthropic Claude) para sugestões pedagógicas inteligentes.
+Sistema web completo para cadastro, organização e consulta de planos de aula, com **Smart Assist** por IA (Gemini API) para sugestões pedagógicas inteligentes.
 
 ---
+![CI](https://github.com/lyssasrodrigues/Lesson-Planner/actions/workflows/ci.yml/badge.svg)
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-3.0-lightgrey?logo=flask)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)
+![Gemini](https://img.shields.io/badge/AI-Gemini%202.0%20Flash-4285F4?logo=google)
 
 ## Como executar (único comando)
 
@@ -13,7 +19,7 @@ cd lesson-planner
 
 # 2. Configure as variáveis de ambiente
 cp .env.example .env
-# Edite .env e adicione sua ANTHROPIC_API_KEY
+# Edite .env e adicione sua GEMINI_API_KEY
 
 # 3. Suba a aplicação
 docker-compose up --build
@@ -28,31 +34,31 @@ API disponível em: **http://localhost:5000/api**
 
 ```
 lesson-planner/
-├── backend/               # API RESTful - Python/Flask
-│   ├── app.py             # Ponto de entrada + factory
+├── backend/                        # API RESTful - Python/Flask
+│   ├── app.py                      # Ponto de entrada + factory
 │   ├── models/
-│   │   └── database.py    # SQLAlchemy models (LessonPlan)
+│   │   └── database.py             # SQLAlchemy models (LessonPlan)
 │   ├── routes/
-│   │   ├── lesson_plans.py  # CRUD endpoints
-│   │   ├── ai_assist.py     # Smart Assist (Anthropic API)
-│   │   └── health.py        # /health endpoint
+│   │   ├── lesson_plans.py          # CRUD endpoints
+│   │   ├── ai_assist.py             # Smart Assist (Gemini API)
+│   │   └── health.py                # /health endpoint
 │   ├── utils/
-│   │   └── logging_config.py  # Logs estruturados em JSON
+│   │   └── logging_config.py        # Logs estruturados em JSON
 │   ├── requirements.txt
 │   └── Dockerfile
-├── frontend/              # SPA - React 18
+├── frontend/                        # SPA - React 18
 │   ├── src/
 │   │   ├── pages/
-│   │   │   ├── ListPage.js    # Listagem com filtros e paginação
-│   │   │   └── FormPage.js    # Formulário cadastro/edição
+│   │   │   ├── ListPage.js          # Listagem com filtros e paginação
+│   │   │   └── FormPage.js          # Formulário cadastro/edição
 │   │   ├── components/
-│   │   │   └── Layout.js      # Navbar e shell da aplicação
+│   │   │   └── Layout.js            # Navbar e shell da aplicação
 │   │   └── services/
-│   │       └── api.js         # Axios client
-│   ├── nginx.conf         # Proxy reverso para /api/*
-│   └── Dockerfile         # Build multi-stage (Node + Nginx)
+│   │       └── api.js               # Axios client
+│   ├── nginx.conf                   # Proxy reverso para /api/*
+│   └── Dockerfile                   # Build multi-stage (Node + Nginx)
 ├── .github/workflows/
-│   └── ci.yml             # GitHub Actions: lint + docker build
+│   └── ci.yml                       # GitHub Actions: lint + docker build
 ├── docker-compose.yml
 └── .env.example
 ```
@@ -67,7 +73,7 @@ lesson-planner/
 | Banco de dados | SQLite (padrão) / PostgreSQL | SQLite p/ dev, Postgres p/ produção |
 | ORM | SQLAlchemy + Flask-SQLAlchemy | Migrations simples, queries expressivas |
 | Validação | marshmallow | Validação e deserialização de esquemas |
-| IA | Anthropic Claude (claude-haiku) | Rápido, econômico, alta qualidade |
+| IA | Google Gemini 2.0 Flash | Rápido, econômico, alta qualidade |
 | Frontend | React 18 + React Router 6 | SPA moderno, ecosystem maduro |
 | HTTP client | Axios | Interceptors para tratamento global de erros |
 | Servidor web | Nginx | Serve build estático + proxy reverso |
@@ -146,7 +152,7 @@ Logs estruturados em JSON com timestamp, nível e contexto:
 cd backend
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-export ANTHROPIC_API_KEY=sk-ant-...
+export GEMINI_API_KEY=AIza...
 python app.py
 ```
 
