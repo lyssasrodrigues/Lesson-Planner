@@ -1,0 +1,81 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(12,14,20,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+
+.headerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.brandIcon { font-size: 1.4rem; }
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.nav { display: flex; gap: 0.25rem; flex: 1; }
+
+.navLink {
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.15s, background 0.15s;
+}
+
+.navLink:hover { color: var(--text); background: var(--surface-raised); }
+.navLink.active { color: var(--text); background: var(--surface-raised); }
+
+.ctaBtn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.45rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: background 0.15s, transform 0.1s;
+  flex-shrink: 0;
+}
+
+.ctaBtn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.ctaBtn:active { transform: translateY(0); }
+
+.main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
