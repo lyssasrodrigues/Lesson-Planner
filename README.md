@@ -1,10 +1,10 @@
-# 📚 PlanejAula — Sistema de Gerenciamento de Planos de Aula
+# PlanejAula — Sistema de Gerenciamento de Planos de Aula
 
 Sistema web completo para cadastro, organização e consulta de planos de aula, com **Smart Assist** por IA (Anthropic Claude) para sugestões pedagógicas inteligentes.
 
 ---
 
-## 🚀 Como executar (único comando)
+## Como executar (único comando)
 
 ```bash
 # 1. Clone o repositório
@@ -24,7 +24,7 @@ API disponível em: **http://localhost:5000/api**
 
 ---
 
-## 🏗️ Arquitetura
+## Arquitetura
 
 ```
 lesson-planner/
@@ -59,7 +59,7 @@ lesson-planner/
 
 ---
 
-## ⚙️ Stack Técnica
+##  Stack Técnica
 
 | Camada | Tecnologia | Justificativa |
 |---|---|---|
@@ -76,7 +76,7 @@ lesson-planner/
 
 ---
 
-## 🔌 Endpoints da API
+## Endpoints da API
 
 ### Planos de Aula
 | Método | Rota | Descrição |
@@ -108,7 +108,7 @@ lesson-planner/
 
 ---
 
-## 🤖 Smart Assist — Prompt Engineering
+## Smart Assist — Prompt Engineering
 
 O backend instrui o modelo a atuar como **Assistente Pedagógico**:
 
@@ -126,7 +126,7 @@ O response é JSON estruturado, parseado e aplicado automaticamente nos campos d
 
 ---
 
-## 📊 Observabilidade
+##  Observabilidade
 
 Logs estruturados em JSON com timestamp, nível e contexto:
 
@@ -139,18 +139,7 @@ Logs estruturados em JSON com timestamp, nível e contexto:
 }
 ```
 
----
-
-## 🔒 Segurança
-
-- ✅ `ANTHROPIC_API_KEY` via variável de ambiente (nunca no código)
-- ✅ `.env` no `.gitignore`
-- ✅ Container roda como usuário não-root
-- ✅ CORS configurado
-
----
-
-## 🛠️ Desenvolvimento local (sem Docker)
+##  Desenvolvimento local (sem Docker)
 
 **Backend:**
 ```bash
@@ -169,21 +158,3 @@ REACT_APP_API_URL=http://localhost:5000/api npm start
 ```
 
 ---
-
-## ✅ Checklist do Desafio
-
-- [x] CRUD completo de Planos de Aula
-- [x] Listagem com paginação
-- [x] Filtros por Disciplina, Tag e Data Prevista
-- [x] Busca por Título
-- [x] Ordenação por Título ou data de cadastro
-- [x] Smart Assist com IA (Anthropic Claude)
-- [x] Loading state enquanto IA "pensa"
-- [x] Tratamento de erro da IA
-- [x] Validação no frontend e backend
-- [x] Docker + docker-compose (sobe com um comando)
-- [x] Health check (`/api/health`)
-- [x] Logs estruturados com TokenUsage e Latency
-- [x] CI com GitHub Actions (flake8, black, ESLint)
-- [x] Chave de API via variável de ambiente
-- [x] README detalhado
